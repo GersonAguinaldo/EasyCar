@@ -13,7 +13,7 @@ const upload = multer({ storage });
 router.get('/', getAllAnnonces);
 router.get('/me', verifyToken, getMyAnnonces);
 router.get('/:id', getAnnonceById);
-router.post('/', verifyToken, upload.array('images', 5), createAnnonce);
+router.post('/', verifyToken, upload.array('images', 5, ), createAnnonce);
 router.put('/:id', verifyToken, updateAnnonce);
 router.delete('/:id', verifyToken, deleteAnnonce);
 
